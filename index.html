@@ -50,6 +50,12 @@
       color: inherit;
     }
 
+    a:focus-visible {
+      outline: 3px solid #7d4a2d;
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -125,8 +131,14 @@
     .hero p {
       max-width: 620px;
       margin-bottom: 24px;
-      color: #4d3124;
+      color: #3f291f;
       font-size: 1.05rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .cta {
@@ -147,6 +159,18 @@
     .cta:hover {
       transform: translateY(-3px) scale(1.01);
       filter: brightness(1.05);
+    }
+
+    .cta.secondary {
+      color: var(--coffee-700);
+      background: transparent;
+      border: 1.5px solid rgba(58, 35, 24, 0.3);
+      box-shadow: none;
+    }
+
+    .cta.secondary:hover {
+      background: rgba(58, 35, 24, 0.08);
+      filter: none;
     }
 
     .hero-photo {
@@ -179,7 +203,7 @@
     }
 
     .lead {
-      color: #4b3226;
+      color: #3f291f;
       max-width: 760px;
       margin-bottom: 24px;
     }
@@ -266,6 +290,10 @@
       overflow-wrap: anywhere;
     }
 
+    .drink-card p {
+      color: #3f291f;
+    }
+
     .price {
       margin-top: 10px;
       color: var(--accent);
@@ -302,6 +330,12 @@
       background: rgba(58, 35, 24, 0.1);
       padding: 6px 10px;
       border-radius: 10px;
+    }
+
+    .contacts-box a {
+      color: var(--coffee-700);
+      font-weight: 700;
+      text-underline-offset: 3px;
     }
 
     footer {
@@ -362,6 +396,10 @@
         justify-content: center;
       }
 
+      .cta-row {
+        width: 100%;
+      }
+
       .hero-photo {
         min-height: 240px;
       }
@@ -378,7 +416,7 @@
       <div class="brand">Два пончика и чашка кофе</div>
       <div class="nav-links">
         <a href="#hero">Главная</a>
-        <a href="#about">О компании</a>
+        <a href="#about">О нас</a>
         <a href="#menu">Меню</a>
         <a href="#contacts">Контакты</a>
       </div>
@@ -388,20 +426,23 @@
   <main>
     <section id="hero" class="hero">
       <div>
-        <h1>Два пончика, чашка кофе и ваш идеальный старт дня</h1>
-        <p>Специализированная кофейня с авторскими напитками, свежей выпечкой и атмосферой, в которую хочется возвращаться снова и снова.</p>
-        <a class="cta" href="#menu">Смотреть фирменные напитки</a>
+        <h1>Кофе и пончики, ради которых хочется выйти пораньше</h1>
+        <p>Варим спешелти-кофе, печем пончики каждый день и собираем завтраки за 7-10 минут. Средний чек: 450-650 ₽.</p>
+        <div class="cta-row">
+          <a class="cta" href="#menu">Выбрать напиток</a>
+          <a class="cta secondary" href="tel:+79991234567">Заказать навынос</a>
+        </div>
       </div>
       <div class="hero-photo" aria-hidden="true"></div>
     </section>
 
     <section id="about">
-      <h2>О компании</h2>
-      <p class="lead">Мы начинали с маленького окна выдачи и двух рецептов пончиков. Сегодня сохраняем тот же подход: ручная работа, честные ингредиенты и кофе, который раскрывает вкус каждого утра.</p>
+      <h2>О нас</h2>
+      <p class="lead">«Два пончика и чашка кофе» - городская кофейня у дома. Мы делаем понятное меню, быстрый сервис и стабильный вкус каждый день.</p>
       <div class="about-box">
         <div class="about-copy">
-          <p>Наша история началась в 2020 году, когда бариста и кондитер объединили идеи и создали место, где кофе дополняет десерт, а десерт подчеркивает кофе.</p>
-          <p>Мы работаем с локальными обжарщиками, сезонными сиропами и фермерским молоком, чтобы в каждой чашке и каждом пончике чувствовался характер.</p>
+          <p>Мы открылись в 2020 году с небольшим окном выдачи и двумя фирменными пончиками. Сегодня у нас полноценная кофейня, но подход остался прежним: меньше лишнего, больше качества.</p>
+          <p>Работаем с локальной обжаркой, свежим молоком и сезонными вкусами. Каждый напиток можно адаптировать: крепче, менее сладко, на растительном молоке.</p>
         </div>
         <div class="about-media">
           <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80" alt="Бариста готовит кофе в уютной кофейне" />
@@ -410,31 +451,31 @@
     </section>
 
     <section id="menu">
-      <h2>Предпросмотр меню</h2>
-      <p class="lead">4 фирменных напитка, за которыми к нам заходят чаще всего.</p>
+      <h2>Меню</h2>
+      <p class="lead">Наши самые популярные напитки: с объемом, профилем вкуса и понятным составом.</p>
       <div class="menu-grid">
         <article class="drink-card">
           <span class="label">Хит</span>
           <h3>Соло Эспрессо</h3>
-          <p>Плотный вкус, шоколадные ноты и бархатное послевкусие.</p>
+          <p>30 мл - крепкий, темный шоколад, орех, сухое послевкусие.</p>
           <div class="price">270 ₽</div>
         </article>
         <article class="drink-card">
           <span class="label">Новинка</span>
           <h3>Латте «Карамельный пончик»</h3>
-          <p>Эспрессо, молоко, карамель и тонкий штрих ванили.</p>
+          <p>300 мл - мягкий, эспрессо, молоко, карамель, ваниль.</p>
           <div class="price">340 ₽</div>
         </article>
         <article class="drink-card">
           <span class="label">Хит</span>
           <h3>Раф «Пряный мёд»</h3>
-          <p>Сливочный профиль с медом, корицей и кардамоном.</p>
+          <p>300 мл - сливочный, сливки, мед, корица, кардамон.</p>
           <div class="price">360 ₽</div>
         </article>
         <article class="drink-card">
           <span class="label">Новинка</span>
           <h3>Колд брю с цитрусом</h3>
-          <p>Холодная экстракция, апельсиновая цедра и легкая сладость.</p>
+          <p>350 мл - освежающий, холодная экстракция, апельсиновая цедра.</p>
           <div class="price">310 ₽</div>
         </article>
       </div>
@@ -442,10 +483,10 @@
 
     <section id="contacts">
       <h2>Контакты</h2>
-      <p class="lead">Заглядывайте в гости, чтобы взять кофе с собой или насладиться им в зале.</p>
+      <p class="lead">Забегайте за кофе навынос или оставайтесь в зале - у нас спокойно, быстро и вкусно.</p>
       <div class="contacts-box">
         <div>
-          <p class="note">«Каждая чашка кофе должна быть маленьким праздником.»</p>
+          <p class="note">«Хороший кофе - это маленькая пауза, после которой день идет лучше.»</p>
           <div class="info-row">
             <span class="info-title">Адрес</span>
             <p>ул. Кофейная, 12, Москва</p>
@@ -454,15 +495,19 @@
             <span class="info-title">Часы работы</span>
             <p>Пн-Пт: 08:00-21:00<br />Сб-Вс: 09:00-22:00</p>
           </div>
+          <div class="info-row">
+            <span class="info-title">Маршрут</span>
+            <p><a href="https://maps.google.com/?q=ул.+Кофейная,+12,+Москва" target="_blank" rel="noopener noreferrer">Построить маршрут</a></p>
+          </div>
         </div>
         <div>
           <div class="info-row">
             <span class="info-title">Телефон</span>
-            <p>+7 (999) 123-45-67</p>
+            <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
           </div>
           <div class="info-row">
             <span class="info-title">Соцсети</span>
-            <p>@2donutscoffee</p>
+            <p><a href="https://t.me/2donutscoffee" target="_blank" rel="noopener noreferrer">@2donutscoffee</a></p>
           </div>
           <div class="info-row">
             <span class="info-title">Ориентир</span>
