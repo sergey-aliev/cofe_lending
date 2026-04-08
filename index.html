@@ -246,21 +246,24 @@
     }
 
     .label {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-size: 0.78rem;
+      float: right;
+      margin: 0 0 10px 10px;
+      font-size: clamp(0.72rem, 0.3vw + 0.66rem, 0.78rem);
       padding: 6px 10px;
       border-radius: 999px;
       color: #fff;
       background: var(--accent);
       letter-spacing: 0.2px;
+      white-space: nowrap;
     }
 
     .drink-card h3 {
+      clear: both;
       margin: 8px 0 6px;
       color: var(--coffee-700);
-      font-size: 1.06rem;
+      font-size: clamp(1.02rem, 0.35vw + 0.95rem, 1.12rem);
+      line-height: 1.25;
+      overflow-wrap: anywhere;
     }
 
     .price {
